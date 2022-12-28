@@ -38,8 +38,8 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           name="viewport"
           content="width=device-with, initital-scale=1, shrink-to-fit=no, maximum-scale=5"
         />
-        <meta property="og:locale" content="ja_JP"/>
-        <meta property="og:type" content="website"/>
+        <meta property="og:locale" content="ja_JP" />
+        <meta property="og:type" content="website" />
       </Head>
       <GlobalStyle />
       <Component {...pageProps} />
