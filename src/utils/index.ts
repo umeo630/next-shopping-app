@@ -1,4 +1,4 @@
-export const fetcher = async(
+export const fetcher = async (
   resource: RequestInfo,
   init?: RequestInit,
 ): Promise<any> => {

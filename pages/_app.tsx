@@ -1,7 +1,7 @@
-import { AppProps } from "next/app";
-import Head from "next/head";
-import React from "react";
-import { createGlobalStyle } from "styled-components";
+import { AppProps } from 'next/app'
+import Head from 'next/head'
+import React from 'react'
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
 html,
