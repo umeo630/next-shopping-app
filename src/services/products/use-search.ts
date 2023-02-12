@@ -80,3 +80,5 @@ const useSearch = (
     isError: !!error,
   }
 }
+
+export default useSearch
