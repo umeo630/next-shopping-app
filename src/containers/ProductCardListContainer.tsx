@@ -67,3 +67,5 @@ const ProductCardListContainer = ({
     </ProductCardList>
   )
 }
+
+export default ProductCardListContainer
