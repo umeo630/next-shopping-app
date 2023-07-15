@@ -26,17 +26,17 @@ const Footer = () => {
           <nav>
             <Box marginBottom={2}>
               <Link href="/" passHref>
-                <Anchor as="a">トップ</Anchor>
+                <Anchor>トップ</Anchor>
               </Link>
             </Box>
             <Box marginBottom={2}>
               <Link href="/" passHref>
-                <Anchor as="a">採用</Anchor>
+                <Anchor>採用</Anchor>
               </Link>
             </Box>
             <Box marginBottom={2}>
               <Link href="/" passHref>
-                <Anchor as="a">お知らせ</Anchor>
+                <Anchor>お知らせ</Anchor>
               </Link>
             </Box>
           </nav>
@@ -48,17 +48,17 @@ const Footer = () => {
           <nav>
             <Box marginBottom={2}>
               <Link href="/" passHref>
-                <Anchor as="a">利用規約</Anchor>
+                <Anchor>利用規約</Anchor>
               </Link>
             </Box>
             <Box marginBottom={2}>
               <Link href="/" passHref>
-                <Anchor as="a">プライバシーポリシー</Anchor>
+                <Anchor>プライバシーポリシー</Anchor>
               </Link>
             </Box>
             <Box marginBottom={2}>
               <Link href="/" passHref>
-                <Anchor as="a">配送と返品</Anchor>
+                <Anchor>配送と返品</Anchor>
               </Link>
             </Box>
           </nav>
@@ -66,7 +66,6 @@ const Footer = () => {
         <Box minWidth={{ base: '100%', md: '120px' }}>
           <nav>
             <Anchor
-              as="a"
               href="https://github.com/gihyo-book/ts-nextbook-app"
               target="_blank"
             >
