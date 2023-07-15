@@ -10,7 +10,7 @@ const nextConfig = {
       compilerConfig = {
         ...compilerConfig,
         // 本番環境ではdata-testid属性を削除
-        reactRemoveProperties: {properties: ['^data-testid$']},
+        reactRemoveProperties: { properties: ['^data-testid$'] },
       }
     }
 
