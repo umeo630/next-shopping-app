@@ -1,5 +1,5 @@
-// 商品のカテゴリ
-export type Category = 'shoes' | 'cloths' | 'book'
+// 商品カテゴリ
+export type Category = 'shoes' | 'clothes' | 'book'
 // 商品の状態
 export type Condition = 'new' | 'used'
 
@@ -26,7 +26,7 @@ export type Product = {
   owner: User
 }
 
-// API Context
+// APIコンテキスト
 export type ApiContext = {
   apiRootUrl: string
 }
