@@ -31,7 +31,7 @@ const IconWrapper = styled.div<IconWrapperProps>`
   height: ${({ size }) => size}px;
   background-color: ${({ backgroundColor }) => backgroundColor};
   cursor: ${({ cursor }) => cursor ?? 'pointer'};
-  color: ${({ color }) => {
+  color: ${({ theme, color }) => {
     if (color) {
       return theme.colors[color]
     }

@@ -1,14 +1,13 @@
-/* eslint-disable prettier/prettier */
 import Image, { ImageProps } from 'next/image'
 import styled from 'styled-components'
-import { Responsive } from 'types/styles'
+import { Responsive } from 'types'
 import { toPropValue } from 'utils/styles'
 
 type ScaleImageProps =
   | Omit<ImageProps, 'quality'> & {
-    containerWidth?: Responsive<string>
-    containerHeight?: Responsive<string>
-  }
+      containerWidth?: Responsive<string>
+      containerHeight?: Responsive<string>
+    }
 
 const ScaleEffectImageContainer = styled.div<{
   width: Responsive<string>
@@ -41,7 +40,6 @@ const ScaleImage = ({
   >
     <ScaleEffectImage
       quality="85"
-      // alt={props.alt ?? 'Product Image'}
       height={props.height ?? 320}
       width={props.width ?? 320}
       {...props}

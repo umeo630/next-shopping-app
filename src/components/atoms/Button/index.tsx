@@ -117,20 +117,20 @@ const Button = styled.button<ButtonProps>`
         styles.push(
           `&:hover {
             ${toPropValue(
-            'background-color',
-            variants[variant].pseudoClass.hover.backgroundColor,
-            theme,
-          )}
+              'background-color',
+              variants[variant].pseudoClass.hover.backgroundColor,
+              theme,
+            )}
           }`.replaceAll('\n', ''),
         )
       !pseudoClass &&
         styles.push(
           `&:disabled {
             ${toPropValue(
-            'background-color',
-            variants[variant].pseudoClass.disabled.backgroundColor,
-            theme,
-          )}
+              'background-color',
+              variants[variant].pseudoClass.disabled.backgroundColor,
+              theme,
+            )}
           }`.replaceAll('\n', ''),
         )
       return styles.join('\n')
@@ -140,7 +140,8 @@ const Button = styled.button<ButtonProps>`
   ${(props) => toPropValue('letter-spacing', props.letterSpacing, props.theme)}
   ${(props) => toPropValue('line-height', props.lineHeight, props.theme)}
   ${(props) => toPropValue('color', props.color, props.theme)}
-  ${(props) => toPropValue('background-color', props.backgroundColor, props.theme)}
+  ${(props) =>
+    toPropValue('background-color', props.backgroundColor, props.theme)}
   ${(props) => toPropValue('width', props.width, props.theme)}
   ${(props) => toPropValue('height', props.height, props.theme)}
   ${(props) => toPropValue('min-width', props.minWidth, props.theme)}
@@ -160,17 +161,17 @@ const Button = styled.button<ButtonProps>`
   ${(props) => toPropValue('padding-right', props.paddingRight, props.theme)}
   &:hover {
     ${(props) =>
-    toPropValue(
-      'background-color',
-      props?.pseudoClass?.hover?.backgroundColor,
-    )}
+      toPropValue(
+        'background-color',
+        props?.pseudoClass?.hover?.backgroundColor,
+      )}
   }
   &:disabled {
     ${(props) =>
-    toPropValue(
-      'background-color',
-      props?.pseudoClass?.disabled?.backgroundColor,
-    )}
+      toPropValue(
+        'background-color',
+        props?.pseudoClass?.disabled?.backgroundColor,
+      )}
   }
   cursor: pointer;
   outline: 0;
