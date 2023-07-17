@@ -1,7 +1,7 @@
 import useSWR from 'swr'
-import { ApiContext, Category, Condition, Product } from 'types/data'
+import type { ApiContext, Category, Condition, Product } from 'types'
 
-export type UseSerchProps = {
+export type UseSearchProps = {
   /**
    * 商品カテゴリ
    */
@@ -44,7 +44,7 @@ export type UseSearch = {
 }
 
 /**
- * プロダクトAPI(一覧取得)のカスタムフック
+ * プロダクトAPI（一覧取得）のカスタムフック
  * @param context APIコンテキスト
  * @param params 検索条件
  * @returns 商品一覧とAPI呼び出しの状態
@@ -58,7 +58,7 @@ const useSearch = (
     initial,
     sort = 'id',
     order = 'desc',
-  }: UseSerchProps = {},
+  }: UseSearchProps = {},
 ): UseSearch => {
   const path = `${context.apiRootUrl.replace(/\/$/g, '')}/products`
   const params = new URLSearchParams()

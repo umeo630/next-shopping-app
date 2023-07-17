@@ -1,4 +1,4 @@
-import { ApiContext, Product } from 'types/data'
+import type { ApiContext, Product } from 'types'
 import { fetcher } from 'utils'
 
 export type GetProductParams = {
@@ -9,9 +9,9 @@ export type GetProductParams = {
 }
 
 /**
- * プロダクトAPI(個別取得)
+ * プロダクトAPI（個別取得）
  * @param context APIコンテキスト
- * @param param1 商品ID
+ * @param params 商品ID
  * @returns 商品
  */
 const getProduct = async (
@@ -24,7 +24,7 @@ const getProduct = async (
       headers: {
         Origin: '*',
         Accept: 'application/json',
-        'Content-Type': 'appilication/json',
+        'Content-Type': 'application/json',
       },
     },
   )

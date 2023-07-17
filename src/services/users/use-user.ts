@@ -1,5 +1,5 @@
 import useSWR from 'swr'
-import { ApiContext, User } from './../../types/data.d'
+import type { ApiContext, User } from 'types'
 
 export type UseUserProps = {
   /**
@@ -29,7 +29,7 @@ export type UseUser = {
 
 /**
  * ユーザーAPI（個別取得）のカスタムフック
- * @param constext APIコンテキスト
+ * @param context APIコンテキスト
  * @returns ユーザーとAPI呼び出しの状態
  */
 const useUser = (

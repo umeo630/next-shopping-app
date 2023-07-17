@@ -1,5 +1,5 @@
 import useSWR from 'swr'
-import { ApiContext, Product } from 'types/data'
+import type { ApiContext, Product } from 'types'
 
 export type UseProductProps = {
   /**
@@ -28,9 +28,9 @@ export type UseProduct = {
 }
 
 /**
- * プロダクトAPI(個別取得)のカスタムフック
+ * プロダクトAPI（個別取得）のカスタムフック
  * @param context APIコンテキスト
- * @param param1 商品IDと初期状態
+ * @param params 商品IDと初期状態
  * @returns 商品とAPI呼び出しの状態
  */
 const useProduct = (

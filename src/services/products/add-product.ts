@@ -1,4 +1,4 @@
-import { ApiContext, Product } from 'types/data'
+import type { ApiContext, Product } from 'types'
 import { fetcher } from 'utils'
 
 export type AddProductsParams = {
@@ -11,7 +11,7 @@ export type AddProductsParams = {
 /**
  * プロダクトAPI（新規追加）
  * @param context APIコンテキスト
- * @param param1 新規追加する商品
+ * @param params 新規追加する商品
  * @returns 新規追加した商品
  */
 const addProduct = async (

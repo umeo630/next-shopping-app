@@ -1,4 +1,4 @@
-import { ApiContext } from 'types/data'
+import type { ApiContext } from 'types'
 import { fetcher } from 'utils'
 
 /**

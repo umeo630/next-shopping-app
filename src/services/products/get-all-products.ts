@@ -1,4 +1,4 @@
-import { ApiContext, Category, Condition, Product } from 'types/data'
+import type { ApiContext, Category, Condition, Product } from 'types'
 import { fetcher } from 'utils'
 
 export type GetAllProductsParams = {
@@ -38,6 +38,7 @@ export type GetAllProductsParams = {
  * @param params 検索条件
  * @returns 商品一覧
  */
+// eslint-disable-next-line complexity
 const getAllProducts = async (
   context: ApiContext,
   {
