@@ -1,8 +1,8 @@
-import ProductForm, { ProductFormData } from 'components/organisms/ProductFrom'
+import ProductForm, { ProductFormData } from 'components/organisms/ProductForm'
 import { useAuthContext } from 'contexts/AuthContext'
-import { useGlobalSpinnerActionsContext } from 'contexts/GlobalSpinnerContxt'
+import { useGlobalSpinnerActionsContext } from 'contexts/GlobalSpinnerContext'
 import addProduct from 'services/products/add-product'
-import { ApiContext, Product } from 'types/data'
+import { ApiContext, Product } from 'types'
 
 const context: ApiContext = {
   apiRootUrl: process.env.NEXT_PUBLIC_API_BASE_PATH || '/api/proxy',
@@ -21,7 +21,6 @@ interface ProductFormContainerProps {
 const ProductFormContainer = ({ onSave }: ProductFormContainerProps) => {
   const { authUser } = useAuthContext()
   const setGlobalSpinner = useGlobalSpinnerActionsContext()
-
   // 出品ボタンを押した時
   const handleSave = async (data: ProductFormData) => {
     if (!authUser) return

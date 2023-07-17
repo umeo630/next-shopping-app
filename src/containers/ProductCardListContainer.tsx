@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import RectLoader from 'components/atoms/RectLoader'
 import Box from 'components/layout/Box'
+import ProductCard from 'components/organisms/ProductCard'
 import ProductCardList from 'components/organisms/ProductCardList'
-import ProductCard from 'components/organisms/PruductCard'
 import useSearch from 'services/products/use-search'
-import { ApiContext, Category, Condition } from 'types/data'
+import type { ApiContext, Category, Condition } from 'types'
 
 const context: ApiContext = {
   apiRootUrl: process.env.NEXT_PUBLIC_API_BASE_PATH || '/api/proxy',
@@ -35,7 +35,7 @@ const ProductCardListContainer = ({
 
   return (
     <ProductCardList>
-      {/** ロード中はレクトローダーを表示 */}
+      {/* ロード中はレクトローダーを表示 */}
       {isLoading &&
         Array.from(Array(16), (_, k) => (
           <Box key={k}>

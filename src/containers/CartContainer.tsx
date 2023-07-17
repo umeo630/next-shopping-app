@@ -1,8 +1,8 @@
 import CartProduct from 'components/organisms/CartProduct'
-import { useGlobalSpinnerActionsContext } from 'contexts/GlobalSpinnerContxt'
+import { useGlobalSpinnerActionsContext } from 'contexts/GlobalSpinnerContext'
 import { useShoppingCartContext } from 'contexts/ShoppingCartContext'
-import purchase from 'services/purchases/purchases'
-import { ApiContext } from 'types/data'
+import purchase from 'services/purchases/purchase'
+import { ApiContext } from 'types'
 
 const context: ApiContext = {
   apiRootUrl: process.env.NEXT_PUBLIC_API_BASE_PATH || '/api/proxy',

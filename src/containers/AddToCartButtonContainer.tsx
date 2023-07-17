@@ -1,6 +1,6 @@
 import Button from 'components/atoms/Button'
 import { useShoppingCartContext } from 'contexts/ShoppingCartContext'
-import { Product } from 'types/data'
+import type { Product } from 'types'
 
 interface AddToCartButtonContainerProps {
   /**
