@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState, useRef, useCallback } from 'react'
 import styled from 'styled-components'
 import Text from 'components/atoms/Text'
 import Flex from 'components/layout/Flex'
@@ -42,7 +42,7 @@ const DropdownArrow = styled.div<{ isOpen?: boolean }>`
     isOpen
       ? 'transparent transparent #222222;'
       : '#222222 transparent transparent'};
-  border-width: ${({ isOpen }) => (isOpen ? '0 5px 5px' : '5px 5px 0')};
+  border-width: ${({ isOpen }) => (isOpen ? '0 5px 5px' : '5px 5px 0;')};
   border-style: solid;
   content: ' ';
   display: block;
@@ -76,6 +76,7 @@ const DropdownOption = styled.div`
     background-color: #f9f9f9;
   }
 `
+
 interface DropdownItemProps {
   item: DropdownItem
 }
@@ -84,7 +85,7 @@ const DropdownItem = (props: DropdownItemProps) => {
   const { item } = props
 
   return (
-    <Flex>
+    <Flex alignItems="center">
       <Text margin={0} variant="small">
         {item.label ?? item.value}
       </Text>
@@ -130,7 +131,7 @@ interface DropdownProps {
 const Dropdown = (props: DropdownProps) => {
   const { onChange, name, value, options, hasError } = props
   const initialItem = options.find((i) => i.value === value)
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpenValue] = useState(false)
   const [selectedItem, setSelectedItem] = useState(initialItem)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
@@ -147,13 +148,13 @@ const Dropdown = (props: DropdownProps) => {
         }
       }
 
-      setIsOpen(false)
+      setIsOpenValue(false)
     },
     [dropdownRef],
   )
 
   const handleMouseDown = (e: React.SyntheticEvent) => {
-    setIsOpen((isOpen) => !isOpen)
+    setIsOpenValue((isOpen) => !isOpen)
     e.stopPropagation()
   }
 
@@ -164,12 +165,12 @@ const Dropdown = (props: DropdownProps) => {
     e.stopPropagation()
 
     setSelectedItem(item)
-    setIsOpen(false)
+    setIsOpenValue(false)
     onChange && onChange(item)
   }
 
   useEffect(() => {
-    // 画面外のクリックとタッチイベントを設定
+    // 画面外のクリックとタッチをイベントを設定
     document.addEventListener('click', handleDocumentClick, false)
     document.addEventListener('touchend', handleDocumentClick, false)
 
@@ -177,7 +178,6 @@ const Dropdown = (props: DropdownProps) => {
       document.removeEventListener('click', handleDocumentClick, false)
       document.removeEventListener('touchend', handleDocumentClick, false)
     }
-
     // 最初だけ呼び出す
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])

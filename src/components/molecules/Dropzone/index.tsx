@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react'
+import React, { useState, useRef, useCallback, useEffect } from 'react'
 import styled from 'styled-components'
 import { CloudUploadIcon } from 'components/atoms/IconButton'
 
@@ -83,7 +83,7 @@ const DropzoneRoot = styled.div<DropzoneRootProps>`
   border: 1px dashed
     ${({ theme, isFocused, hasError }) => {
       if (hasError) {
-        return theme.colors.dager
+        return theme.colors.danger
       } else if (isFocused) {
         return theme.colors.black
       } else {
@@ -114,6 +114,7 @@ const DropzoneContent = styled.div<{
 const DropzoneInputFile = styled.input`
   display: none;
 `
+
 /**
  * ドロップゾーン
  * ファイルの入力を受け付ける
@@ -162,7 +163,7 @@ const Dropzone = (props: DropzoneProps) => {
       return window.alert(
         `次のファイルフォーマットは指定できません${acceptedFileTypes.join(
           ' ,',
-        )}`,
+        )})`,
       )
     }
 
@@ -170,7 +171,7 @@ const Dropzone = (props: DropzoneProps) => {
     onChange && onChange(files)
   }
 
-  // ドラッグ状態のマウスポインタが範囲内に入っている時
+  // ドラッグ状態のマウスポインタが範囲内入っている時
   const handleDragOver = useCallback((e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault()
     e.stopPropagation()
@@ -200,6 +201,7 @@ const Dropzone = (props: DropzoneProps) => {
       inputRef.current.value = ''
     }
   }, [value])
+
   return (
     <>
       {/* ドラックアンドドロップイベントを管理 */}

@@ -1,8 +1,8 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react'
+import React, { useRef, useState, useCallback, useEffect } from 'react'
 import styled from 'styled-components'
 import {
-  CheckBoxIcon,
   CheckBoxOutlineBlankIcon,
+  CheckBoxIcon,
 } from 'components/atoms/IconButton'
 import Text from 'components/atoms/Text'
 import Flex from 'components/layout/Flex'
@@ -15,17 +15,16 @@ export interface CheckBoxProps
   label?: string
 }
 
-// 非表示のチェックボックス
 const CheckBoxElement = styled.input`
   display: none;
 `
 
-// チェックボックスのラベル
 const Label = styled.label`
   cursor: pointer;
   margin-left: 6px;
   user-select: none;
 `
+
 /**
  * チェックボックス
  */
