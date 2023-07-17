@@ -1,6 +1,6 @@
-import React, { useContext, useReducer } from 'react'
-import { ADD_PRODUCT, REMOVE_PRODUCT, shopReducer } from './reducers'
-import { Product } from 'types/data'
+import React, { useReducer, useContext } from 'react'
+import { shopReducer, ADD_PRODUCT, REMOVE_PRODUCT } from './reducers'
+import type { Product } from 'types'
 
 type ShoppingCartContextType = {
   cart: Product[]

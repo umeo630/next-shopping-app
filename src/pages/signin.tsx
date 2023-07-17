@@ -1,4 +1,4 @@
-import { NextPage } from 'next'
+import type { NextPage } from 'next'
 import { useRouter } from 'next/router'
 import AppLogo from 'components/atoms/AppLogo'
 import Box from 'components/layout/Box'
@@ -11,12 +11,12 @@ const SigninPage: NextPage = () => {
   // 認証後のイベントハンドラ
   const handleSignin = async (err?: Error) => {
     if (!err) {
-      // サインインに成功し、クエリが指定されている場合はそのURLに移動
-      // デフォルトはトップページに移動
-      const redirectTo = (router.query['redirect_to'] as string) ?? '/'
+      // サインインに成功し、クエリが指定されている場合はそのURLに移動。
+      // デフォルトはトップページに移動。
+      const redurectTo = (router.query['redirect_to'] as string) ?? '/'
 
-      console.log('Redirectiong', redirectTo)
-      await router.push(redirectTo)
+      console.log('Redirecting', redurectTo)
+      await router.push(redurectTo)
     }
   }
 

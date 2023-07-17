@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react'
+import React, { useState, useContext, createContext } from 'react'
 
 const GlobalSpinnerContext = createContext<boolean>(false)
 const GlobalSpinnerActionsContext = createContext<

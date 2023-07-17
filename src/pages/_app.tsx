@@ -4,10 +4,10 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import { SWRConfig } from 'swr'
 import GlobalSpinner from 'components/organisms/GlobalSpinner'
 import { AuthContextProvider } from 'contexts/AuthContext'
-import GlobalSpinnerContextProvider from 'contexts/GlobalSpinnerContxt'
+import GlobalSpinnerContextProvider from 'contexts/GlobalSpinnerContext'
 import { ShoppingCartContextProvider } from 'contexts/ShoppingCartContext'
 import { theme } from 'themes'
-import { ApiContext } from 'types/data'
+import type { ApiContext } from 'types'
 import { fetcher } from 'utils'
 
 // グローバルのスタイル

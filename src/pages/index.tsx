@@ -1,13 +1,13 @@
-import { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next'
+import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next'
 import Link from 'next/link'
 import Text from 'components/atoms/Text'
 import Box from 'components/layout/Box'
 import Flex from 'components/layout/Flex'
+import ProductCard from 'components/organisms/ProductCard'
 import ProductCardCarousel from 'components/organisms/ProductCardCarousel'
-import ProductCard from 'components/organisms/PruductCard'
 import Layout from 'components/templates/Layout'
 import getAllProducts from 'services/products/get-all-products'
-import { ApiContext, Product } from 'types/data'
+import { ApiContext, Product } from 'types'
 
 type HomePageProps = InferGetStaticPropsType<typeof getStaticProps>
 
@@ -114,7 +114,7 @@ export const getStaticProps: GetStaticProps = async () => {
   // 各商品のトップ6個を取得し、静的ページを作成
   // 60秒でrevalidateな状態にし、静的ページを更新する
   const [clothesProducts, bookProducts, shoesProducts] = await Promise.all([
-    getAllProducts(context, { category: 'cloths', limit: 6, page: 1 }),
+    getAllProducts(context, { category: 'clothes', limit: 6, page: 1 }),
     getAllProducts(context, { category: 'book', limit: 6, page: 1 }),
     getAllProducts(context, { category: 'shoes', limit: 6, page: 1 }),
   ])

@@ -1,4 +1,4 @@
-import {
+import type {
   GetStaticPaths,
   GetStaticPropsContext,
   InferGetStaticPropsType,
@@ -12,12 +12,12 @@ import Box from 'components/layout/Box'
 import Flex from 'components/layout/Flex'
 import Breadcrumb from 'components/molecules/Breadcrumb'
 import Layout from 'components/templates/Layout'
+import UserProductCardListContainer from 'containers/UserProductCardListContainer'
 import UserProfileContainer from 'containers/UserProfileContainer'
-import UserProductCardListContainer from 'containers/UserPruductCardListContainer'
 import getAllProducts from 'services/products/get-all-products'
 import getAllUsers from 'services/users/get-all-users'
 import getUser from 'services/users/get-user'
-import { ApiContext } from 'types/data'
+import type { ApiContext } from 'types'
 
 type UserPageProps = InferGetStaticPropsType<typeof getStaticProps>
 
@@ -92,7 +92,7 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
     throw new Error('params is undefined')
   }
 
-  // ユーザー情報とユーザーの所持する商品を取得し、静的ページを作成
+  // ユーザー情報と ユーザーの所持する商品を取得し、静的ページを作成
   // 10秒でrevalidateな状態にし、静的ページを更新する
   const userId = Number(params.id)
   const [user, products] = await Promise.all([

@@ -1,4 +1,4 @@
-import { NextPage } from 'next'
+import type { NextPage } from 'next'
 import Link from 'next/link'
 import BreadcrumbItem from 'components/atoms/BreadcrumbItem'
 import Text from 'components/atoms/Text'

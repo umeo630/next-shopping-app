@@ -1,9 +1,9 @@
-import {
+import type {
   GetStaticPaths,
   GetStaticProps,
+  GetStaticPropsContext,
   InferGetStaticPropsType,
   NextPage,
-  GetStaticPropsContext,
 } from 'next'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -13,23 +13,23 @@ import Text from 'components/atoms/Text'
 import Box from 'components/layout/Box'
 import Flex from 'components/layout/Flex'
 import Breadcrumb from 'components/molecules/Breadcrumb'
-import ProductCard from 'components/organisms/PruductCard'
+import ProductCard from 'components/organisms/ProductCard'
 import UserProfile from 'components/organisms/UserProfile'
 import Layout from 'components/templates/Layout'
 import AddToCartButtonContainer from 'containers/AddToCartButtonContainer'
 import getAllProducts from 'services/products/get-all-products'
 import getProduct from 'services/products/get-product'
 import useProduct from 'services/products/use-product'
-import { ApiContext, Category } from 'types/data'
+import type { ApiContext, Category } from 'types'
 
 const categoryNameDict: Record<Category, string> = {
   book: '本',
   shoes: 'シューズ',
-  cloths: 'トップス',
+  clothes: 'トップス',
 }
 
 const context: ApiContext = {
-  apiRootUrl: process.env.NEXT_PUBLIC_API_BASE_PATH || 'api/proxy',
+  apiRootUrl: process.env.NEXT_PUBLIC_API_BASE_PATH || '/api/proxy',
 }
 
 type ProductPageProps = InferGetStaticPropsType<typeof getStaticProps>
@@ -101,32 +101,32 @@ const ProductPage: NextPage<ProductPageProps> = ({
               />
             </Link>
           </Box>
-          <Box padding={2} width={{ base: '100%', md: '700px' }}>
-            <Flex
-              justifyContent="space-between"
-              flexDirection="column"
-              height={{ base: '', md: '100%' }}
-            >
-              {/* 商品概要を表示、改行ごとにテキストコンポーネントでラップ */}
-              <Box>
-                {product.description
-                  .split('\n')
-                  .map((text: string, i: number) => (
-                    <Text key={i} as="p">
-                      {text}
-                    </Text>
-                  ))}
-              </Box>
-              {/*
+        </Box>
+        <Box padding={2} width={{ base: '100%', md: '700px' }}>
+          <Flex
+            justifyContent="space-between"
+            flexDirection="column"
+            height={{ base: '', md: '100%' }}
+          >
+            {/* 商品概要を表示、改行ごとにテキストコンポーネントでラップ */}
+            <Box>
+              {product.description
+                .split('\n')
+                .map((text: string, i: number) => (
+                  <Text key={i} as="p">
+                    {text}
+                  </Text>
+                ))}
+            </Box>
+            {/*
               カート追加ボタンコンテナ
               ボタンを押されたらShoppingCartContextに商品を追加する
             */}
-              <AddToCartButtonContainer
-                product={product}
-                onAddToCartButtonClick={handleAddToCartButtonClick}
-              />
-            </Flex>
-          </Box>
+            <AddToCartButtonContainer
+              product={product}
+              onAddToCartButtonClick={handleAddToCartButtonClick}
+            />
+          </Flex>
         </Box>
       </Flex>
     </Layout>

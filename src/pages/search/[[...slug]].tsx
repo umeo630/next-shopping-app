@@ -1,4 +1,4 @@
-import { NextPage } from 'next'
+import type { NextPage } from 'next'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import styled from 'styled-components'
@@ -10,11 +10,11 @@ import Breadcrumb from 'components/molecules/Breadcrumb'
 import FilterGroup from 'components/molecules/FilterGroup'
 import Layout from 'components/templates/Layout'
 import ProductCardListContainer from 'containers/ProductCardListContainer'
-import { Category, Condition } from 'types/data'
+import type { Category, Condition } from 'types'
 
 const Anchor = styled(Text)`
   cursor: pointer;
-  &: hover {
+  &:hover {
     text-decoration: underline;
   }
 `
@@ -22,7 +22,7 @@ const Anchor = styled(Text)`
 const categoryNameDict: Record<Category, string> = {
   book: '本',
   shoes: 'シューズ',
-  cloths: 'トップス',
+  clothes: 'トップス',
 }
 
 const SearchPage: NextPage = () => {
