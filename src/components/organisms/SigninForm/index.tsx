@@ -40,7 +40,7 @@ const SigninForm = ({ onSignin }: SigninFormProps) => {
           {...register('username', { required: true })}
           name="username"
           type="text"
-          placeholder="ユーザー名"
+          placeholder="ユーザ名"
           hasError={!!errors.username}
         />
         {errors.username && (
@@ -50,7 +50,7 @@ const SigninForm = ({ onSignin }: SigninFormProps) => {
         )}
       </Box>
       <Box marginBottom={2}>
-        {/* サインインパスワードの入力*/}
+        {/* サインインパスワードの入力 */}
         <Input
           {...register('password', { required: true })}
           name="password"

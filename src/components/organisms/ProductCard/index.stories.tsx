@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import ProductCard from '.'
+import ProductCard from './index'
 
 export default {
   title: 'Organisms/ProductCard',
@@ -11,36 +11,36 @@ export default {
         type: { summary: 'string' },
       },
     },
-  },
-  price: {
-    control: { type: 'number' },
-    description: '商品価格',
-    table: {
-      type: { summmary: 'number' },
+    price: {
+      control: { type: 'number' },
+      description: '商品価格',
+      table: {
+        type: { summary: 'number' },
+      },
     },
-  },
-  imageUrl: {
-    control: { type: 'text' },
-    description: '商品画像URL',
-    table: {
-      type: { summary: 'string' },
+    imageUrl: {
+      control: { type: 'text' },
+      description: '商品画像URL',
+      table: {
+        type: { summary: 'string' },
+      },
     },
-  },
-  blurDataUrl: {
-    control: { type: 'text' },
-    description: '商品のぼかし画像のデータURIスキーム',
-    table: {
-      type: { summary: 'string' },
+    blurDataUrl: {
+      control: { type: 'text' },
+      description: '商品のぼかし画像のデータURIスキーム',
+      table: {
+        type: { summary: 'string' },
+      },
     },
-  },
-  variant: {
-    options: ['listing', 'small', 'detail'],
-    control: { type: 'radio' },
-    defaultValue: 'listing',
-    description: 'バリアント（表示スタイル）',
-    table: {
-      type: { summary: 'listing | small | detail' },
-      defaultValue: { summary: 'primary' },
+    variant: {
+      options: ['listing', 'small', 'detail'],
+      control: { type: 'radio' },
+      defaultValue: 'listing',
+      description: 'バリアント（表示スタイル）',
+      table: {
+        type: { summary: 'listing | small | detail' },
+        defaultValue: { summary: 'primary' },
+      },
     },
   },
 } as ComponentMeta<typeof ProductCard>

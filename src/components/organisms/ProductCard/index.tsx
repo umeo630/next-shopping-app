@@ -17,11 +17,11 @@ interface ProductCardProps {
    */
   imageUrl: string
   /**
-   * 商品のぼかし画像のURIスキーム
+   * 商品のぼかし画像のデータURIスキーム
    */
   blurDataUrl?: string
   /**
-   * バリアント(表示スタイル)
+   * バリアント（表示スタイル）
    */
   variant?: 'listing' | 'small' | 'detail'
 }
@@ -30,12 +30,10 @@ interface ProductCardProps {
 const ProductCardContainer = styled.div`
   position: relative;
 `
+
 // 商品カード画像のコンテナ
 const ProductCardImageContainer = styled.div`
-  position: absolute;
-  z-index: 100;
-  top: 0px;
-  left: 0px;
+  z-index: 99;
 `
 
 // 商品カードの情報
@@ -113,7 +111,6 @@ const ProductCard = ({
             objectFit="cover"
             placeholder="blur"
             blurDataURL={blurDataUrl}
-            alt={''}
           />
         )}
         {!blurDataUrl && (
@@ -124,7 +121,6 @@ const ProductCard = ({
             containerWidth={size}
             containerHeight={size}
             objectFit="cover"
-            alt={''}
           />
         )}
       </ProductCardImageContainer>

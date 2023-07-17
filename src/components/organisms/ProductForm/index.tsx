@@ -6,7 +6,7 @@ import TextArea from 'components/atoms/TextArea'
 import Box from 'components/layout/Box'
 import Dropdown from 'components/molecules/Dropdown'
 import InputImages, { FileData } from 'components/molecules/InputImages'
-import { Category, Condition } from 'types/data'
+import type { Category, Condition } from 'types'
 
 export type ProductFormData = {
   image: FileData[]
@@ -28,7 +28,7 @@ interface ProductFormProps {
  * 商品投稿フォーム
  */
 const ProductForm = ({ onProductSave }: ProductFormProps) => {
-  // React Form Hook
+  // React Hook Formの使用
   const {
     register,
     handleSubmit,
@@ -57,13 +57,13 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
               images={value ?? []}
               onChange={onChange}
               maximumNumber={1}
-              hasError={!error}
+              hasError={!!error}
             />
           )}
         />
         {errors.image && (
           <Text color="danger" variant="small" paddingLeft={1}>
-            Product Image is required
+            Product image is required
           </Text>
         )}
       </Box>

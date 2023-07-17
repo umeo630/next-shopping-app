@@ -1,6 +1,6 @@
 import { ComponentMeta } from '@storybook/react'
 import React, { useEffect } from 'react'
-import Header from '.'
+import Header from './index'
 import { AuthContextProvider } from 'contexts/AuthContext'
 import {
   ShoppingCartContextProvider,

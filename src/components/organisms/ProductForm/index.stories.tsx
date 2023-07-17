@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import ProductForm from '.'
+import ProductForm from './index'
 
 export default {
   title: 'Organisms/ProductForm',
@@ -16,5 +16,4 @@ export default {
 const Template: ComponentStory<typeof ProductForm> = (args) => (
   <ProductForm {...args} />
 )
-
 export const Form = Template.bind({})

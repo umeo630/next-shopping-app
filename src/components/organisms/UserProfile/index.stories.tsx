@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import UserProfile from '.'
+import UserProfile from './index'
 
 export default {
   title: 'Organisms/UserProfile',

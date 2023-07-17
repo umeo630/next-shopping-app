@@ -1,9 +1,9 @@
 import {
-  RenderResult,
-  act,
-  fireEvent,
   render,
+  act,
   screen,
+  fireEvent,
+  RenderResult,
 } from '@testing-library/react'
 import { ThemeProvider } from 'styled-components'
 import ProductForm from '.'
@@ -63,6 +63,7 @@ describe('ProductForm', () => {
       // 出品ボタンをクリック
       fireEvent.click(screen.getByText('出品'))
     })
+
     // handleProductSaveが呼ばれていることを確認
     expect(handleProductSave).toHaveBeenCalledTimes(1)
   })
