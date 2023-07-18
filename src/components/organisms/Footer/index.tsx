@@ -66,6 +66,7 @@ const Footer = () => {
         <Box minWidth={{ base: '100%', md: '120px' }}>
           <nav>
             <Anchor
+              as="a"
               href="https://github.com/gihyo-book/ts-nextbook-app"
               target="_blank"
             >

@@ -36,11 +36,12 @@ const UserProfile = ({
   numberOfProducts,
   description,
 }: UserProfileProps) => {
-  const profileImageSize = variant === 'small' ? '100px' : '120px'
+  const profileBoxSize = variant === 'small' ? '100px' : '120px'
+  const profileImageSize = variant === 'small' ? 100 : 120
 
   return (
     <Flex>
-      <Box minWidth={profileImageSize}>
+      <Box minWidth={profileBoxSize}>
         {/* ユーザー画像 */}
         <ShapeImage
           shape="circle"
